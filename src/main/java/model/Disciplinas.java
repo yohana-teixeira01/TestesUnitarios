@@ -1,6 +1,6 @@
 package model;
 
-import java.awt.*;
+import java.util.List;
 
 public class Disciplinas {
 
@@ -10,6 +10,8 @@ public class Disciplinas {
         private String ciencias;
         private String ingles;
         private String biologia;
+
+        List<Notas> notas;
 
         public Disciplinas() {
                 this.matematica = matematica;

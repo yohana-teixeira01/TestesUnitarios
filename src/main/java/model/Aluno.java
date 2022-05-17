@@ -1,6 +1,6 @@
 package model;
 
-public class Aluno extends Pessoa {
+public class Aluno {
 
         private float mensalidade;
         private String turma;
