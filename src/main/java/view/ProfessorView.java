@@ -11,7 +11,7 @@ public class ProfessorView {
 
         Scanner scanner = new Scanner(System.in);
 
-        public void View(){
+        public void View() throws Exception {
 
                 ProfessorDAO professorDAO = new Professor();
 
@@ -32,9 +32,15 @@ public class ProfessorView {
                 switch (op){
                         case 1:
                                 System.out.println("Salario: ");
-                                professorDAO.VerSalario(matricula);
+                                System.out.println(professorDAO.VerSalario(matricula));
                                 break;
                         case 2:
+
+                                System.out.println("Informe disciplina: ");
+                                String disciplinaRef = scanner.nextLine();
+
+                                System.out.println("Matricula do Aluno que Deseja inserir as Notas: ");
+                                long matriculaAluno = scanner.nextLong();
 
                                 System.out.println("Insira as notas: ");
                                 float nota = scanner.nextFloat();
@@ -45,10 +51,7 @@ public class ProfessorView {
                                 System.out.println("");
                                 float nota3 = scanner.nextFloat();
 
-                                System.out.println("Informe disciplina: ");
-                                String disciplina = scanner.nextLine();
-
-                                professorDAO.AtribuirNota(nota, nota1, nota2, nota3, disciplina);
+                                professorDAO.AtribuirNota(matriculaAluno, disciplinaRef, nota, nota1, nota2, nota3);
 
                                 break;
 

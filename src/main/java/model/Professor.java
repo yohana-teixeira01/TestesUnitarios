@@ -4,21 +4,21 @@ import controller.ProfessorDAO;
 
 public class Professor implements ProfessorDAO {
 
-        private float Salario = 1000;
+        private double Salario = 5000;
 
-        private long matricula = 1L;
+        private long matricula = 1;
 
         private String nome = "Leuson";
 
-        public Professor(){
+    public Professor(){
             super();
         }
 
-        public float getSalario() {
+        public double getSalario() {
             return Salario;
         }
 
-        public void setSalario(float salario) {
+        public void setSalario(double salario) {
             Salario = salario;
         }
 
@@ -38,73 +38,91 @@ public class Professor implements ProfessorDAO {
             this.nome = nome;
         }
 
-        public String AtribuirNota(float atribuirNota, float atribuirNota1, float atribuirNota2, float atribuirNota3, String disciplinaRef){
+        public void AtribuirNota(long matriculaAluno, String disciplinaRef, float atribuirNota, float atribuirNota1, float atribuirNota2, float atribuirNota3) throws Exception {
 
                     Disciplinas disciplinas = new Disciplinas();
-                    Notas notas = new Notas();
 
-                    String materia = null;
+                    Aluno aluno = new Aluno();
 
-                    if(disciplinaRef.equals(disciplinas.getMatematica())){
-                        notas.setNota(atribuirNota);
-                        notas.setNota1(atribuirNota1);
-                        notas.setNota2(atribuirNota2);
-                        notas.setNota3(atribuirNota3);
+                    if(matriculaAluno == aluno.getMatricula()){
 
-                        materia = disciplinas.getMatematica();
+                            if(disciplinaRef.equals(disciplinas.getMatematica())){
+
+                                Notas notaMatematica = new Notas();
+
+                                notaMatematica.setNota(atribuirNota);
+                                notaMatematica.setNota1(atribuirNota1);
+                                notaMatematica.setNota2(atribuirNota2);
+                                notaMatematica.setNota3(atribuirNota3);
+
+                            }
+                            else if(disciplinaRef.equals(disciplinas.getPortugues())) {
+
+                                Notas notaPortugues = new Notas();
+
+                                notaPortugues.setNota(atribuirNota);
+                                notaPortugues.setNota1(atribuirNota1);
+                                notaPortugues.setNota2(atribuirNota2);
+                                notaPortugues.setNota3(atribuirNota3);
+
+                            }
+                            else if(disciplinaRef.equals(disciplinas.getGeografia())) {
+
+                                Notas notaGeografia = new Notas();
+
+                                notaGeografia.setNota(atribuirNota);
+                                notaGeografia.setNota1(atribuirNota1);
+                                notaGeografia.setNota2(atribuirNota2);
+                                notaGeografia.setNota3(atribuirNota3);
+
+                            }
+                            else if(disciplinaRef.equals(disciplinas.getCiencias())) {
+
+                                Notas notasCiencias = new Notas();
+
+                                notasCiencias.setNota(atribuirNota);
+                                notasCiencias.setNota1(atribuirNota1);
+                                notasCiencias.setNota2(atribuirNota2);
+                                notasCiencias.setNota3(atribuirNota3);
+
+                            }
+                            else if(disciplinaRef.equals(disciplinas.getIngles())) {
+
+                                Notas notasIngles = new Notas();
+
+                                notasIngles.setNota(atribuirNota);
+                                notasIngles.setNota1(atribuirNota1);
+                                notasIngles.setNota2(atribuirNota2);
+                                notasIngles.setNota3(atribuirNota3);
+
+                            }
+                            else if(disciplinaRef.equals(disciplinas.getBiologia())) {
+
+                                Notas notasBiologia = new Notas();
+
+                                notasBiologia.setNota(atribuirNota);
+                                notasBiologia.setNota1(atribuirNota1);
+                                notasBiologia.setNota2(atribuirNota2);
+                                notasBiologia.setNota3(atribuirNota3);
+
+                            }
+
+                    } else {
+                        throw new Exception("Aluno nao existe");
                     }
-                    else if(disciplinaRef.equals(disciplinas.getPortugues())) {
-                        notas.setNota(atribuirNota);
-                        notas.setNota1(atribuirNota1);
-                        notas.setNota2(atribuirNota2);
-                        notas.setNota3(atribuirNota3);
-
-                        materia = disciplinas.getPortugues();
-                    }
-                    else if(disciplinaRef.equals(disciplinas.getGeografia())) {
-                        notas.setNota(atribuirNota);
-                        notas.setNota1(atribuirNota1);
-                        notas.setNota2(atribuirNota2);
-                        notas.setNota3(atribuirNota3);
-
-                        materia = disciplinas.getGeografia();
-                    }
-                    else if(disciplinaRef.equals(disciplinas.getCiencias())) {
-                        notas.setNota(atribuirNota);
-                        notas.setNota1(atribuirNota1);
-                        notas.setNota2(atribuirNota2);
-                        notas.setNota3(atribuirNota3);
-
-                        materia = disciplinas.getCiencias();
-                    }
-                    else if(disciplinaRef.equals(disciplinas.getIngles())) {
-                        notas.setNota(atribuirNota);
-                        notas.setNota1(atribuirNota1);
-                        notas.setNota2(atribuirNota2);
-                        notas.setNota3(atribuirNota3);
-
-                        materia = disciplinas.getIngles();
-                    }
-                    else if(disciplinaRef.equals(disciplinas.getBiologia())) {
-                        notas.setNota(atribuirNota);
-                        notas.setNota1(atribuirNota1);
-                        notas.setNota2(atribuirNota2);
-                        notas.setNota3(atribuirNota3);
-
-                        materia = disciplinas.getBiologia();
-                    }
-
-                    return materia;
 
                 }
 
                 @Override
-                public float VerSalario(long matriculaPro) {
+                public double VerSalario(long matriculaPro) throws Exception {
+
+                    double salario =  0;
 
                     if(matriculaPro == matricula) {
-                        return getSalario();
+                        salario = getSalario();
+                        return salario;
                     } else {
-                        return 0;
+                        throw new Exception("Error");
                     }
 
                 }
