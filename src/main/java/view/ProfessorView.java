@@ -13,7 +13,7 @@ public class ProfessorView {
 
         public void View() throws Exception {
 
-                ProfessorDAO professorDAO = new Professor();
+                ProfessorDAO professorDAO = null;
 
                 System.out.println("Bem vindo, professor " + professor.getNome());
                 System.out.println("\t");
@@ -35,12 +35,11 @@ public class ProfessorView {
                                 System.out.println(professorDAO.VerSalario(matricula));
                                 break;
                         case 2:
+                                System.out.println("Matricula do Aluno que Deseja inserir as Notas: ");
+                                long matriculaAluno = scanner.nextLong();
 
                                 System.out.println("Informe disciplina: ");
                                 String disciplinaRef = scanner.nextLine();
-
-                                System.out.println("Matricula do Aluno que Deseja inserir as Notas: ");
-                                long matriculaAluno = scanner.nextLong();
 
                                 System.out.println("Insira as notas: ");
                                 float nota = scanner.nextFloat();

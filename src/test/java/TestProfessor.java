@@ -1,9 +1,18 @@
+import controller.ProfessorDAO;
 import junit.framework.TestCase;
 import model.Professor;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-public class TestProfessor extends TestCase {
+import static junit.framework.Assert.assertSame;
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotNull;
+
+public class TestProfessor {
+
+        Professor professor = new Professor();
+
+        ProfessorDAO professorDAO;
 
         @BeforeEach
         public void Inializando(){
@@ -11,9 +20,7 @@ public class TestProfessor extends TestCase {
         }
 
         @Test
-        public void TestProfessor(){
-
-            Professor professor = new Professor();
+        public void TestProfessor00(){
 
             double salario = 10000;
             long matricula = 10;
@@ -34,6 +41,15 @@ public class TestProfessor extends TestCase {
             assertEquals(actual, expected);
             assertEquals(actual1, expected1);
             assertEquals(actual2, expected2);
+
+        }
+
+        @Test
+        public void TestProfessor01() throws Exception {
+
+            long matricula = 1;
+
+            professorDAO.VerSalario(matricula);
 
         }
 
