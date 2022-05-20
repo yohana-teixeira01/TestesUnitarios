@@ -10,41 +10,41 @@ public class Professor implements ProfessorDAO {
 
         private String nome = "Leuson";
 
-    public Professor(){
-            super();
-        }
+        public Professor(){
+                super();
+            }
 
-                public double getSalario() {
-                    return Salario;
-                }
+                    public double getSalario() {
+                        return Salario;
+                    }
 
-                public void setSalario(double salario) {
-                    Salario = salario;
-                }
+                    public void setSalario(double salario) {
+                        Salario = salario;
+                    }
 
-                public long getMatricula() {
-                    return matricula;
-                }
+                    public long getMatricula() {
+                        return matricula;
+                    }
 
-                public void setMatricula(long matricula) {
-                    this.matricula = matricula;
-                }
+                    public void setMatricula(long matricula) {
+                        this.matricula = matricula;
+                    }
 
-                public String getNome() {
-                    return nome;
-                }
+                    public String getNome() {
+                        return nome;
+                    }
 
-                public void setNome(String nome) {
-                    this.nome = nome;
-                }
+                    public void setNome(String nome) {
+                        this.nome = nome;
+                    }
 
-                public void AtribuirNota(long matriculaAluno, String disciplinaRef, float atribuirNota, float atribuirNota1, float atribuirNota2, float atribuirNota3) throws Exception {
+                    public void AtribuirNota(long matriculaAluno, String disciplinaRef, float atribuirNota, float atribuirNota1, float atribuirNota2, float atribuirNota3) throws Exception {
 
-                        Disciplinas disciplinas = new Disciplinas();
+                            Disciplinas disciplinas = new Disciplinas();
 
-                        Aluno aluno = new Aluno();
+                            Aluno aluno = new Aluno();
 
-                        if(matriculaAluno == aluno.getMatricula()){
+                            if(matriculaAluno == aluno.getMatricula()){
 
                                 if(disciplinaRef.equals(disciplinas.getMatematica())){
 
@@ -107,25 +107,41 @@ public class Professor implements ProfessorDAO {
 
                                 }
 
-                        } else {
-                            throw new Exception("Aluno nao existe");
-                        }
+                            } else {
+                                throw new Exception("Aluno nao existe");
+                            }
 
-                }
-
-                @Override
-                public double VerSalario(long matriculaPro) throws Exception {
-
-                    double salario =  0;
-
-                    if(matriculaPro == matricula) {
-                        salario = getSalario();
-                        return salario;
-                    } else {
-                        throw new Exception("Error");
                     }
 
-                }
+                    @Override
+                    public double VerSalario(long matriculaPro) throws Exception {
+
+                        double salario =  0;
+
+                        if(matriculaPro == matricula) {
+                            salario = getSalario();
+                            return salario;
+                        } else {
+                            throw new Exception("Error");
+                        }
+
+                    }
+
+                    @Override
+                    public boolean verificarAluno(long verificarAluno){
+
+                        boolean verificar = false;
+
+                        Aluno aluno = new Aluno();
+
+                        if(verificarAluno == aluno.getMatricula()){
+                            verificar = true;
+
+                        }
+
+                        return verificar;
+
+                    }
 
 
 }

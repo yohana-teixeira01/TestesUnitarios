@@ -14,12 +14,17 @@ public class Disciplinas {
         List<Notas> notas;
 
         public Disciplinas() {
+                super();
+        }
+
+        public Disciplinas(String matematica, String portugues, String geografia, String ciencias, String ingles, String biologia, List<Notas> notas) {
                 this.matematica = matematica;
                 this.portugues = portugues;
                 this.geografia = geografia;
                 this.ciencias = ciencias;
                 this.ingles = ingles;
                 this.biologia = biologia;
+                this.notas = notas;
         }
 
         public String getMatematica() {
@@ -68,6 +73,14 @@ public class Disciplinas {
 
         public void setBiologia(String biologia) {
                 this.biologia = biologia;
+        }
+
+        public List<Notas> getNotas() {
+                return notas;
+        }
+
+        public void setNotas(List<Notas> notas) {
+                this.notas = notas;
         }
 
 }

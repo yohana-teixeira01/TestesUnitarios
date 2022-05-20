@@ -40,4 +40,19 @@ public class Aluno {
             this.matricula = matricula;
         }
 
+        public void acessarNotas(String materia, long matriculaVal){
+
+                Disciplinas disciplinas = new Disciplinas();
+
+                if(matriculaVal == getMatricula()){
+
+                        Notas notas = new Notas();
+
+                        if(materia.equals(disciplinas.getMatematica())){
+
+                        }
+                }
+
+        }
+
 }

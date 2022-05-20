@@ -6,4 +6,6 @@ public interface ProfessorDAO {
 
         public double VerSalario(long matricula) throws Exception;
 
+        public boolean verificarAluno(long verificarAluno);
+
 }
