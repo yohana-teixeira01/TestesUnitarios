@@ -1,18 +1,16 @@
-import controller.ProfessorDAO;
+package EscolaTest;
+
 import junit.framework.TestCase;
-import model.Professor;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import professor.Professor;
 
-import static junit.framework.Assert.assertSame;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 
 public class TestProfessor {
 
         Professor professor = new Professor();
-
-        ProfessorDAO professorDAO;
 
         @BeforeEach
         public void Inializando(){
@@ -24,7 +22,7 @@ public class TestProfessor {
 
             double salario = 10000;
             long matricula = 10;
-            String nome = "Yohana";
+            String nome = "Yohana Texeira";
 
             professor.setSalario(salario);
             professor.setMatricula(matricula);
@@ -48,8 +46,6 @@ public class TestProfessor {
         public void TestProfessor01() throws Exception {
 
             long matricula = 1;
-
-            professorDAO.VerSalario(matricula);
 
         }
 
