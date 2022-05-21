@@ -6,10 +6,10 @@ import java.util.Arrays;
 
 public class Aluno {
 
-            private double mensalidade;
-            private String turma;
-            private long matricula;
-            private String nome;
+            private double mensalidade = 2.000;
+            private String turma = "Sistemas para Internet";
+            private long matricula = 2022;
+            private String nome = "Bruna";
 
             private boolean status = false;
 

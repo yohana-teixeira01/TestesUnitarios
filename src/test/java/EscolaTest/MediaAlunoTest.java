@@ -1,4 +1,4 @@
-package org.example.EscolaTest;
+package EscolaTest;
 
 import org.example.Escola.MediaAluno;
 import org.junit.jupiter.api.AfterEach;

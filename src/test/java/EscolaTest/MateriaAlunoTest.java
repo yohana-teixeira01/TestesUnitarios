@@ -1,4 +1,5 @@
-package org.example.EscolaTest;
+package EscolaTest;
+
 
 import org.example.Escola.MateriaAluno;
 import org.example.Escola.MediaAluno;
