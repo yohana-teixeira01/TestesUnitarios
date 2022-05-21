@@ -1,18 +1,18 @@
-package EscolaTest;
+package escolateste;
 
 import aluno.Aluno;
 import diretor.Diretor;
 import disciplina.Disciplinas;
-import junit.framework.TestCase;
+
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import professor.Professor;
 
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class Diretor1Teste extends TestCase {
+public class Diretor1Teste  {
         Professor professor;
 
         @BeforeEach
@@ -52,10 +52,10 @@ public class Diretor1Teste extends TestCase {
 
             diretor.cadastroDisciplina();
 
-            boolean actual = false;
-            //boolean expected = disciplinas.getMateria();
+            boolean actual = diretor.cadastroDisciplina();
+            boolean expected = true;
 
-            //assertEquals(actual, expected);
+            assertEquals(actual, expected);
 
         }
 

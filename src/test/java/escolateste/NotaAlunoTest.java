@@ -1,4 +1,4 @@
-package org.example.EscolaTest;
+package escolateste;
 
 import org.example.Escola.NotaAluno;
 import org.junit.jupiter.api.AfterEach;

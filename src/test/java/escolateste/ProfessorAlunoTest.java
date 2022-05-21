@@ -1,4 +1,4 @@
-package EscolaTest;
+package escolateste;
 
 import sistemaescola.ProfessorAluno;
 import org.junit.jupiter.api.AfterEach;

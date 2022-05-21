@@ -8,7 +8,7 @@ public class Aluno {
 
             private double mensalidade = 2.000;
             private String turma = "Sistemas para Internet";
-            private long matricula = 2022;
+            private long matricula = 1;
             private String nome = "Bruna";
 
             private boolean status = false;

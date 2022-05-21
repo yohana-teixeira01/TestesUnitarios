@@ -1,8 +1,7 @@
-package EscolaTest;
+package escolateste;
 
 
 import org.example.Escola.MateriaAluno;
-import org.example.Escola.MediaAluno;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,7 +40,7 @@ public class MateriaAlunoTest {
     // Se a quantidade de materias for menor ou igual a 6 o teste passará, caso contrário, ele falhará;
     public void MateriaFalseTest(){
         System.out.println("Teste de Matéria False:");
-        materias.verificaQtdMateriasAluno(5);
+        materias.verificaQtdMateriasAluno(7);
         assertFalse(materias.receberQtdMaterias(6));
         System.out.println("Quantidade de máterias abaixo do permitido, ou seja, pode colocar mais máterias!");
     }
