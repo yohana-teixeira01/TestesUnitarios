@@ -5,15 +5,15 @@ import disciplina.Disciplinas;
 
 public class Professor {
 
-                private double Salario;
+                private double Salario = 5.000;
 
-                private long matricula;
+                private long matricula = 10;
 
-                private String nome;
+                private String nome = "Leuson";
 
-                private String disciplina;
+                private String disciplina = "Testes de Software";
 
-                private String turma;
+                private String turma = "Sistemas Para Internet - 4 Periodo";
 
                 public Professor() {
                     super();
@@ -67,14 +67,14 @@ public class Professor {
                     this.turma = turma;
                 }
 
-                public void AtribuirNota(long matriculaAluno, String nomeDisciplina, double nota, double nota1, double nota2, double notas3) throws Exception {
+                public void AtribuirNota(long matriculaAluno, String nomeDisciplina, double[] notas) throws Exception {
 
                         Aluno aluno = new Aluno();
 
                         if(matriculaAluno == aluno.getMatricula()){
 
                             if(nomeDisciplina.equals("Testes de Software")){
-                                aluno.setNotas(new double[]{nota, nota1, nota2, notas3});
+                                aluno.setNotas(notas);
                             }
 
                         } else {

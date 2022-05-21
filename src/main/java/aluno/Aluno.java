@@ -7,9 +7,9 @@ import java.util.Arrays;
 public class Aluno {
 
             private double mensalidade;
-            private String turma;
-            private long matricula;
-            private String nome;
+            private String turma = "Sistemas Para Internet - 4 Periodo";
+            private long matricula = 1;
+            private String nome = "Yohana Texeira";
 
             private boolean status = false;
 

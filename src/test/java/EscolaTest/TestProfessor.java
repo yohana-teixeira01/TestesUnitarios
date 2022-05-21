@@ -1,20 +1,33 @@
 package EscolaTest;
 
+import aluno.Aluno;
 import junit.framework.TestCase;
+import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import professor.Professor;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertNotNull;
 
-public class TestProfessor {
+public class TestProfessor extends TestCase {
 
-        Professor professor = new Professor();
+        Professor professor;
+        Aluno aluno;
 
         @BeforeEach
         public void Inializando(){
+
+            this.professor = new Professor();
+
+            this.aluno = new Aluno();
+
             System.out.println("Inicializando tests");
+        }
+
+        @AfterEach
+        public void Finalizando(){
+            System.out.println("Finalizando tests");
         }
 
         @Test
@@ -45,7 +58,40 @@ public class TestProfessor {
         @Test
         public void TestProfessor01() throws Exception {
 
-            long matricula = 1;
+            double actual = 3.000;
+
+            double expected = professor.VerSalario(10);
+
+            Assert.assertNotEquals(actual, expected);
+
+        }
+
+        @Test
+        public void TestProfessor02() throws Exception {
+
+            double[] actualNotas = {10.0, 7.0, 6.0, 8.0 };
+            long actualMatriculaAluno = 1;
+            String actualNomeDisciplina = "Testes de Software";
+
+            professor.AtribuirNota(actualMatriculaAluno, actualNomeDisciplina, actualNotas);
+
+            //Assert.assertArrayEquals(actualNotas, aluno.getNotas());
+
+            assertEquals(actualNotas, aluno.getNotas());
+
+        }
+
+        @Test
+        public void TestProfessor03() throws Exception {
+
+              long actualMatricula = 10;
+              String actualDisciplina = "Testes de Software";
+
+              professor.TurmaCadastrada(actualMatricula);
+
+              String expected = professor.getDisciplina();
+
+              assertEquals(actualMatricula, expected);
 
         }
 
