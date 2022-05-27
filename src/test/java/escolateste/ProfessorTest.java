@@ -1,13 +1,13 @@
 package escolateste;
 
-import sistemaescola.ProfessorAluno;
+import sistemaescola.Professor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ProfessorAlunoTest {
+public class ProfessorTest {
 
     @BeforeEach
     public void initEach(){
@@ -18,7 +18,7 @@ public class ProfessorAlunoTest {
     // verificação básica se existe alunos suficiente para começar a aula;
     public void verificaSeProfessorEmAulaDeveriaTerAula(){
         System.out.println("Teste de Verificação de Professor!");
-        ProfessorAluno professorX = new ProfessorAluno();
+        Professor professorX = new Professor();
         professorX.setName("Professor X");
         assertTrue(professorX.verificaSeProfessorEmAula(10,8));
         System.out.println("A aula irá começar...");
@@ -29,7 +29,7 @@ public class ProfessorAlunoTest {
     public void verificaSeProfessorEmAulaNaoDeveriaEmHorarioInvalido(){
         System.out.println("Teste de Verificação de Aula em horario invalido!");
         assertThrows(IllegalArgumentException.class,() ->{
-            ProfessorAluno professorX = new ProfessorAluno();
+            Professor professorX = new Professor();
             professorX.setName("Professor X");
             professorX.verificaSeProfessorEmAula(10,7);
         });
@@ -40,7 +40,7 @@ public class ProfessorAlunoTest {
     // Validação se faz a chamada e distribui as atividades;
     public void verificaSeFazChamada(){
         System.out.println("Teste de Verificação se distribui a atividade!");
-        ProfessorAluno professorX = new ProfessorAluno();
+        Professor professorX = new Professor();
         professorX.setName("Professor X");
         assertEquals("faz chamada e distribui as atividades",
                 professorX.fazChamada(10));
